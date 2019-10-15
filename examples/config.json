@@ -1,0 +1,22 @@
+{
+  "Auth": {
+    "Username": "",
+    "Password": "",
+    "Header": "",
+    "Token": ""
+  },
+  "URI": {
+    "Base": ""
+  },
+  "Options": {
+    "CAPath": "",
+    "VerifySSL": true,
+    "Debug": false
+  },
+  "Proxy": {
+    "URI": "",
+    "Port": "",
+    "Username": "",
+    "Password": ""
+  }
+}

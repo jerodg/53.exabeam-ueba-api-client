@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.8
-"""Exabeam API Client: Setup
+"""Exabeam UEBA API Client: Setup
 Copyright © 2019 Jerod Gawne <https://github.com/jerodg/>
 
 This program is free software: you can redistribute it and/or modify
@@ -44,27 +44,27 @@ def main() -> NoReturn:
                        'Topic :: Utilities',
                        'Topic :: Internet',
                        'Topic :: Internet :: WWW/HTTP'],
-          description='Exabeam API Client Library',
+          description='Exabeam UEBA API Client Library',
           entry_points={'console_scripts': []},
           include_package_data=True,
-          install_requires=['base-api-client'],
-          keywords='Exabeam api client rest',
+          install_requires=['base-api-client==0.9.0'],
+          keywords='Exabeam EUBA API REST client',
           license='Server Side Public License (SSPL)',
           long_description_content_type='text/markdown',
           long_description=readme(),
-          name='exabeam-api-client',
-          package_data={'exabeam-api-client': []},
+          name='exabeam-ueba-api-client',
+          package_data={'exabeam-ueba-api-client': []},
           packages=find_packages(),
-          project_urls={'Bugs':          'https://github.com/jerodg/exabeam-api-client/issues',
-                        'Documentation': 'https://jerodg.github.io/exabeam-api-client',
+          project_urls={'Bugs':          'https://github.com/jerodg/exabeam-ueba-api-client/issues',
+                        'Documentation': 'https://jerodg.github.io/exabeam-ueba-api-client',
                         'Funding':       'https://www.paypal.me/jerodgawne',
                         'Say Thanks!':   'https://saythanks.io/to/jerodg',
-                        'Source':        'https://github.com/jerodg/exabeam-api-client'},
+                        'Source':        'https://github.com/jerodg/exabeam-ueba-api-client'},
           python_requires='>=3.8, <3.9',
           setup_requires=['pytest-runner'],
           tests_require=['pytest', 'pytest-asyncio'],
-          url='https://pypi.org/project/exabeam-api-client/',
-          version='0!0.1.0',
+          url='https://pypi.org/project/exabeam-ueba-api-client/',
+          version='0!0.3.0',
           zip_safe=True)
 
 

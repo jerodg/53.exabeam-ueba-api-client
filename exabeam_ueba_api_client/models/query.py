@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.8
-"""Exabeam API Client: Init
+"""Exabeam UEBA API Client: Models.Query
 Copyright © 2019 Jerod Gawne <https://github.com/jerodg/>
 
 This program is free software: you can redistribute it and/or modify
@@ -18,4 +18,29 @@ copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 
-from Exabeam_api_client.client import ExabeamApiClient
+from dataclasses import dataclass
+
+from base_api_client.models.record import Record
+
+
+@dataclass
+class Query(Record):
+    numberOfResults: int = 1000000
+
+
+@dataclass
+class NotableUsersQuery(Query):
+    """
+    Attributes:
+        type (str):
+        page (int):
+
+    References:
+        See your local documentation; https://myexabeam:port/uba/docs#!/api/getNotableUsers
+    """
+    unit: str = 'd'
+    num: int = 1
+
+
+if __name__ == '__main__':
+    print(__doc__)

@@ -11,7 +11,8 @@
   "Options": {
     "CAPath": "",
     "VerifySSL": true,
-    "Debug": false
+    "Debug": false,
+    "SEM": 15
   },
   "Proxy": {
     "URI": "",

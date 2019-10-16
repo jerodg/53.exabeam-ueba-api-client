@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.8
-"""Exabeam API Client: Models.Init
+"""Exabeam UEBA API Client: Test Notable
 Copyright © 2019 Jerod Gawne <https://github.com/jerodg/>
 
 This program is free software: you can redistribute it and/or modify
@@ -17,14 +17,28 @@ copies or substantial portions of the Software.
 
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
+import time
 
-from Exabeam_api_client.models.artifact import ArtifactRequest
-from Exabeam_api_client.models.attachment import Attachment
-from Exabeam_api_client.models.cef import Cef
-from Exabeam_api_client.models.comment import Comment
-from Exabeam_api_client.models.container import ContainerRequest
-from Exabeam_api_client.models.custom_fields import CustomFields
-from Exabeam_api_client.models.exceptions import InvalidOptionError
-from Exabeam_api_client.models.note import Note
-from Exabeam_api_client.models.pin import Pin
-from Exabeam_api_client.models.query import AuditQuery, ContainerQuery, Query
+import pytest
+from base_api_client import bprint, Results, tprint
+from os import getenv
+
+from exabeam_ueba_api_client import ExabeamApiClient
+from exabeam_ueba_api_client.models import NotableUsersQuery
+
+
+@pytest.mark.asyncio
+async def test_get_notable_users():
+    ts = time.perf_counter()
+
+    bprint('Test: Get Notable Users')
+    async with ExabeamApiClient(cfg=f'{getenv("CFG_HOME")}/exabeam_api_client.toml') as eac:
+        results = await eac.get_notable_users(query=NotableUsersQuery(num=10))
+
+        assert type(results) is Results
+        assert len(results.success) >= 1
+        assert not results.failure
+
+        tprint(results, top=5)
+
+    bprint(f'-> Completed in {(time.perf_counter() - ts):f} seconds.')

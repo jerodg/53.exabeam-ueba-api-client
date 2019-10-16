@@ -9,8 +9,8 @@
 ![0%](https://img.shields.io/badge/Coverage-%25-red.svg)
 <a href="https://saythanks.io/to/jerodg"><img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg"></a>
 
-# Exabeam, API client.
-Client library for Exabeam's REST API.
+# Exabeam User and Entity Behavior Analytics (UEBA), API client.
+Client library for Exabeam's UEBA REST API.
 
 Developed for use with Exabeam v4.0+, however, most functionality *should work 
 with previous versions.
@@ -22,7 +22,7 @@ __*Not Affiliated with Exabeam__
 
 ## Installation
 ```bash
-pip install Exabeam-api-client
+pip install exabeam-ueba-api-client
 ```
 
 ## Basic Usage
@@ -35,8 +35,12 @@ This modules' primary use-case is inheritance from other REST API clients.
 ## API Implementation, Categories () ~0%, Functions () ~0%
 __*These should match unit tests.__
 
+- [x] Login
+- [x] Get Notable Users
+- [x] Get Watchlist Users
+
 ## Documentation
-[GitHub Pages](https://jerodg.github.io/exabeam-api-client/)
+[GitHub Pages](https://jerodg.github.io/exabeam-ueba-api-client/)
 - Work in Process
 
 ## Known Issues

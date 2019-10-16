@@ -25,22 +25,18 @@ markdown_extensions:
   - footnotes
 nav:
   - About: 'index.md'
-#  - Location: 'location.md'
-#  - Installation: 'install.md'
-#  - Usage: 'use.md'
-#  - Test: 'test.md'
 plugins:
   - search:
       lang: en
   - macros
 remote_branch: gh-pages
 remote_name: origin
-repo_url: https://github.com/jerodg/base-api-client/tree/gh-pages
+repo_url: https://github.com/jerodg/exabeam-ueba-api-client/tree/gh-pages
 repo_name: GitHub
 site_author: Jerod Gawne
-site_description: Base API Client
-site_name: Base API Client
-site_url: https://jerodg.github.io/base-api-client
+site_description: Exabeam UEBA API Client
+site_name: Exabeam UEBA API Client
+site_url: https://jerodg.github.io/exabeam-ueba-api-client
 strict: true
 theme:
   name: material

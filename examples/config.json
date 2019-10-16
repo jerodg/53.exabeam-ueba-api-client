@@ -12,7 +12,7 @@
     "CAPath": "",
     "VerifySSL": true,
     "Debug": false,
-    "SEM": 15
+    "SEM": 5
   },
   "Proxy": {
     "URI": "",

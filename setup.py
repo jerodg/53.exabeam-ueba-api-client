@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.8
 """Exabeam UEBA API Client: Setup
-Copyright © 2019 Jerod Gawne <https://github.com/jerodg/>
+Copyright © 2019-2020 Jerod Gawne <https://github.com/jerodg/>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the Server Side Public License (SSPL) as
@@ -67,7 +67,7 @@ def main() -> NoReturn:
           setup_requires=['base-api-client'] + ['pytest-runner'] if {'pytest', 'test', 'ptr'}.intersection(sys.argv) else [],
           tests_require=['base-api-client', 'pytest', 'pytest-asyncio'],
           url='https://pypi.org/project/exabeam-ueba-api-client/',
-          version='0!0.4.0',
+          version='0!0.4.1',
           zip_safe=True)
 
 

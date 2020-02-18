@@ -65,7 +65,7 @@ def main() -> NoReturn:
                         'Source':        'https://github.com/jerodg/exabeam-ueba-api-client'},
           python_requires='>=3.6, <3.9',
           setup_requires=['base-api-client'] + ['pytest-runner'] if {'pytest', 'test', 'ptr'}.intersection(sys.argv) else [],
-          tests_require=['base-api-client-', 'pytest', 'pytest-asyncio'],
+          tests_require=['base-api-client', 'pytest', 'pytest-asyncio'],
           url='https://pypi.org/project/exabeam-ueba-api-client/',
           version='0!0.4.0',
           zip_safe=True)

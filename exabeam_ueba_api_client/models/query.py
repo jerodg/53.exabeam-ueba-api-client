@@ -30,14 +30,13 @@ class Query(Record):
 
 @dataclass
 class NotableUsersQuery(Query):
-    """
-    Attributes:
-        type (str):
-        page (int):
+    unit: str = 'd'
+    num: int = 1
 
-    References:
-        See your local documentation; https://myexabeam:port/uba/docs#!/api/getNotableUsers
-    """
+
+@dataclass
+class WatchlistUsersQuery(Query):
+    watchlistId: str = None
     unit: str = 'd'
     num: int = 1
 

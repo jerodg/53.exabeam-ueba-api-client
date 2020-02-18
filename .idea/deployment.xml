@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="aims-prod: exabeam-ueba-api-client">
+  <component name="PublishConfigData" autoUpload="Always" serverName="aims_prod: exabeam_ueba_api_client">
     <serverData>
-      <paths name="aims-prod: exabeam-ueba-api-client">
+      <paths name="aims_prod: exabeam_ueba_api_client">
         <serverdata>
           <mappings>
-            <mapping deploy="/opt/sea/exabeam-ueba-api-client" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/opt/sea/exabeam-ueba-api-client" local="$PROJECT_DIR$" />
           </mappings>
-          <excludedPaths>
-            <excludedPath path="/opt/sea/exabeam-ueba-api-client/.venv" />
-            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
-          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

@@ -18,10 +18,11 @@ copies or substantial portions of the Software.
 You should have received a copy of the SSPL along with this program.
 If not, see <https://www.mongodb.com/licensing/server-side-public-license>."""
 import time
+from os import getenv
 
 import pytest
-from base_api_client import bprint, Results, tprint
-from os import getenv
+from base_api_client.models import Results
+from base_api_client.utils import bprint, tprint
 
 from exabeam_ueba_api_client import ExabeamApiClient
 

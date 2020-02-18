@@ -23,7 +23,11 @@ verify_ssl = true
 name = 'pypi'
 
 [dev-packages]
+aiodns = "*"
+aiofiles = "*"
+aiohttp = "*"
 better-exceptions = "*"
+cchardet = "*"
 mkdocs = "*"
 mkdocs-macros-plugin = "*"
 mkdocs-material = "*"
@@ -32,12 +36,15 @@ pygments = "*"
 pytest = "*"
 pytest-asyncio = "*"
 pytest-cov = "*"
+python-rapidjson = "*"
 setuptools = "*"
+tenacity = "*"
+toml = "*"
 twine = "*"
 wheel = "*"
 
 [packages]
-base-api-client = "0.9.0"
+base-api-client = "*"
 
 [requires]
 python_version = "3.8"

@@ -23,21 +23,19 @@ import logging
 from typing import NoReturn, Optional, Union
 from uuid import uuid4
 
-from base_api_client import BaseApiClient, Results
+from base_api_client import BaseApiClient
+from base_api_client.models import Results
 
-from exabeam_ueba_api_client.models import NotableUsersQuery, Query
+from exabeam_ueba_api_client.models import NotableUsersQuery, WatchlistUsersQuery
 
 logger = logging.getLogger(__name__)
-
-
-# todo: get watchlist users make watchlist optional default to all watchlists
 
 
 class ExabeamApiClient(BaseApiClient):
     """Exabeam UEBA API Client"""
     SEM: int = 15  # This defines the number of parallel async requests to make.
 
-    def __init__(self, cfg: Union[str, dict], sem: Optional[int] = None):
+    def __init__(self, cfg: Union[str, dict]):
         """Initializes Class
 
         Args:
@@ -46,7 +44,7 @@ class ExabeamApiClient(BaseApiClient):
                 config.* in the examples folder for reference.
             sem (Optional[int]): An integer that defines the number of parallel
                 requests to make."""
-        BaseApiClient.__init__(self, cfg=cfg, sem=sem or self.SEM)
+        BaseApiClient.__init__(self, cfg=cfg)
 
         self.logged_in: bool = False
 
@@ -103,7 +101,7 @@ class ExabeamApiClient(BaseApiClient):
 
         return await self.process_results(results, 'users')
 
-    async def get_watchlist_users(self, watchlists: dict, query: Optional[Query] = Query()) -> Results:
+    async def get_watchlist_users(self, watchlists: dict, query: Optional[WatchlistUsersQuery] = WatchlistUsersQuery()) -> Results:
         """
 
         Args:
@@ -122,10 +120,10 @@ class ExabeamApiClient(BaseApiClient):
         for k, v in watchlists.items():
             logger.debug(f'Getting watchlist {k}: {v}, users from Exabeam...')
             tasks = [asyncio.create_task(self.request(method='get',
-                                                      end_point=f'/uba/api/watchlist/{k}/',
+                                                      end_point=f'/uba/api/watchlist/assets/{k}/',
                                                       request_id=uuid4().hex,
                                                       params=query.dict()))]
-            res = await self.process_results(Results(data=await asyncio.gather(*tasks)), 'users')
+            res = await self.process_results(Results(data=await asyncio.gather(*tasks)), 'items')
             for r in res.success:
                 r['watchlist'] = v
 

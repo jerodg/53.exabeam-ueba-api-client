@@ -41,6 +41,8 @@ def main() -> NoReturn:
                        'Operating System :: MacOS :: MacOS X',
                        'Operating System :: Microsoft :: Windows',
                        'Operating System :: POSIX',
+                       'Programming Language :: Python :: 3.6',
+                       'Programming Language :: Python :: 3.7',
                        'Programming Language :: Python :: 3.8',
                        'Topic :: Utilities',
                        'Topic :: Internet',
@@ -61,11 +63,11 @@ def main() -> NoReturn:
                         'Funding':       'https://www.paypal.me/jerodgawne',
                         'Say Thanks!':   'https://saythanks.io/to/jerodg',
                         'Source':        'https://github.com/jerodg/exabeam-ueba-api-client'},
-          python_requires='>=3.8, <3.9',
-          setup_requires=[] + ['pytest-runner'] if {'pytest', 'test', 'ptr'}.intersection(sys.argv) else [],
-          tests_require=['pytest', 'pytest-asyncio'],
+          python_requires='>=3.6, <3.9',
+          setup_requires=['base-api-client'] + ['pytest-runner'] if {'pytest', 'test', 'ptr'}.intersection(sys.argv) else [],
+          tests_require=['base-api-client-', 'pytest', 'pytest-asyncio'],
           url='https://pypi.org/project/exabeam-ueba-api-client/',
-          version='0!0.3.0',
+          version='0!0.4.0',
           zip_safe=True)
 
 
